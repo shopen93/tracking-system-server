@@ -1,0 +1,8 @@
+<table>
+	<tr ng-repeat="coords in mainController.coordinates">
+		<td>{{$index}}</td>
+		<td>{{coords.latitude}}</td>
+		<td>{{coords.longitude}}<td>
+		<td><button class="btn" ng-click="mainController.showMap($index)">view</button></td>
+	</tr>
+</table>

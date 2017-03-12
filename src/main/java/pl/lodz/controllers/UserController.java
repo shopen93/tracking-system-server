@@ -39,4 +39,5 @@ public class UserController {
 	public @ResponseBody User getDataForUser(@RequestBody String name) {
 		return userService.getUser(name);
 	}
+	
 }

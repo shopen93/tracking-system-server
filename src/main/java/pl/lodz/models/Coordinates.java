@@ -1,5 +1,7 @@
 package pl.lodz.models;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,6 +20,9 @@ public class Coordinates {
 	@Column(name = "longitude")
 	private double longitude;
 
+	@Column(name = "creationDate")
+	private Date date;
+	
 	public Coordinates() {
 		
 	}
@@ -25,6 +30,7 @@ public class Coordinates {
 	public Coordinates(double latitude, double longitude) {
 		this.latitude = latitude;
 		this.longitude = longitude;
+		this.date = new Date();
 	}
 	
 	public int getId() {
@@ -49,6 +55,14 @@ public class Coordinates {
 
 	public void setLongitude(double longitude) {
 		this.longitude = longitude;
+	}
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
 	}
 	
 }

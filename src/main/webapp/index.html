@@ -2,11 +2,18 @@
 <html ng-app="tracking system">
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<title>Tracking system</title>
 	</head>
 	
 	<body>
-		
+		<div class="container">
+			<div class="row">
+				<nav class="navbar navbar-inverse">
+					<button class="btn navbar-btn">{{MAIN_PAGE|translate}}</button>
+				</nav>
+			</div>
+			<div ng-view></div>		
+		</div>
 	</body>
 	
 	<!-- style css -->
