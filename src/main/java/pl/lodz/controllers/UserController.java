@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import pl.lodz.models.Coordinates;
 import pl.lodz.models.User;
-import pl.lodz.requestModels.AddCoordinatesData;
 import pl.lodz.services.UserService;
 
 @Controller
@@ -20,15 +19,14 @@ public class UserController {
 	UserService userService;
 	
 	@RequestMapping(value = "/addCoordinates", method = RequestMethod.PUT)
-	public @ResponseBody void addCoordinates(AddCoordinatesData data) {
-		User user = userService.getUser(data.getName());
-		Coordinates coords = new Coordinates(Double.valueOf(data.getLatitude()), 
-				Double.valueOf(data.getLongitude()));
+	public @ResponseBody void addCoordinates(String name, String latitude, String longitude) {
+		User user = userService.getUser(name);
+		Coordinates coords = new Coordinates(Double.valueOf(latitude), Double.valueOf(longitude));
 		
 		if(user != null) {
 			user.addCoords(coords);
 		} else {
-			user = new User(data.getName());
+			user = new User(name);
 			user.addCoords(coords);
 		}
 		
