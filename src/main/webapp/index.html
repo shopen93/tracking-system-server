@@ -8,8 +8,9 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<nav class="navbar navbar-inverse">
-					<button class="btn navbar-btn">{{MAIN_PAGE|translate}}</button>
+				<nav class="navbar navbar-default">
+					<p class="navbar-text navbar-left"><a href="#main" class="navbar-link">{{"MAIN_PAGE"|translate}}</a></p>
+					<button class="btn btn-default navbar-btn navbar-right"><a href="#login" class="navbar-link">{{"LOGIN_PAGE"|translate}}</a></button>
 				</nav>
 			</div>
 			<div ng-view></div>		
@@ -36,4 +37,5 @@
 	<script type="text/javascript" src="app/app.routes.js"></script>
 	<script type="text/javascript" src="app/app.translate.js"></script>
 	<script type="text/javascript" src="app/components/main/mainController.js"></script>
+	<script type="text/javascript" src="app/components/login/loginController.js"></script>
 </html>

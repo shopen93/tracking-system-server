@@ -1,13 +1,12 @@
 package pl.lodz.controllers;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import pl.lodz.models.User;
+import pl.lodz.models.Login;
 import pl.lodz.services.LoginService;
 
 @Controller
@@ -18,18 +17,14 @@ public class LoginController {
 	LoginService loginService;
 	
 	@RequestMapping("/tryLogin")
-	public @ResponseBody List<User> tryLogin(String login, String password) {
-		return loginService.login(login, password);
+	public @ResponseBody int tryLogin(@RequestBody Login login) {
+		return loginService.login(login.getLogin(), login.getPassword());
 	}
 	
 	@RequestMapping("/register")
-	public @ResponseBody String register(String login, String password) {
-		if(loginService.tryRegister(login)) {
-			loginService.register(login, password);
-			return "OK";
-		}
-		
-		return "EXIST";
+	public @ResponseBody String register(@RequestBody Login login) {		
+		loginService.register(login.getLogin(), login.getPassword());
+		return "OK";
 	}
 	
 }

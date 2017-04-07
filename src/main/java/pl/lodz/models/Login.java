@@ -26,6 +26,10 @@ public class Login {
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<User> users;
 
+	public Login() {
+		
+	}
+	
 	public Login(String login, String password) {
 		this.login = login;
 		this.password = password;

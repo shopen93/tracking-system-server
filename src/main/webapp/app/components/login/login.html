@@ -1,0 +1,26 @@
+<form class="form-horizontal">
+	<br/>
+	<div class="form-group">
+		<blockquote>
+			<p>{{"LOGIN_INFO"|translate}}</p>
+		</blockquote>
+	</div>
+	<div class="form-group" ng-class="{'has-error' : loginController.invalidEmail}">
+		<label class="col-sm-offset-1 col-sm-2 control-label">{{"LOGIN_EMAIL"|translate}}</label>
+		<div class="col-sm-4">
+			<input type="email" class="form-control" ng-model="loginController.login">
+		</div>
+	</div>
+	<div class="form-group" ng-class="{'has-error' : loginController.invalidPassword}">
+		<label class="col-sm-offset-1 col-sm-2 control-label">{{"LOGIN_PASSWORD"|translate}}</label>
+		<div class="col-sm-4">
+			<input type="password" class="form-control" ng-model="loginController.password">
+		</div>
+	</div>
+	<br/>
+	<div class="form-group">
+		<div class="col-sm-offset-3 col-sm-4">
+			<button class="btn btn-default" ng-click="loginController.onLogin()">{{"LOGIN_BUTTON"|translate}}</button>
+		</div>
+	</div>
+</form>

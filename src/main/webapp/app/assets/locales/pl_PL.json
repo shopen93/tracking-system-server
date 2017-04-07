@@ -1,3 +1,9 @@
 {
-	"MAIN_PAGE"				:			"Strona g³ówna"
+	"MAIN_PAGE"				:			"Strona g\u0142\u00F3wna",
+	"LOGIN_PAGE"			:			"Logowanie",
+	
+	"LOGIN_INFO"			:			"Zaloguj si\u0119 do systemu. W przypadku gdy podany adres email nie istnieje w naszym systemie konto zostanie automatycznie za\u0142o\u017Cone.",
+	"LOGIN_EMAIL"			:			"Email",
+	"LOGIN_PASSWORD"		:			"Has\u0142o",
+	"LOGIN_BUTTON"			:			"Zaloguj"
 }
