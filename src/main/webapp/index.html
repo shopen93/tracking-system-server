@@ -10,7 +10,7 @@
 			<div class="row">
 				<nav class="navbar navbar-default">
 					<p class="navbar-text navbar-left"><a href="#main" class="navbar-link">{{"MAIN_PAGE"|translate}}</a></p>
-					<button class="btn btn-default navbar-btn navbar-right"><a href="#login" class="navbar-link">{{"LOGIN_PAGE"|translate}}</a></button>
+					<button class="btn btn-default navbar-btn navbar-right" ng-show="!logged"><a href="#login" class="navbar-link">{{"LOGIN_PAGE"|translate}}</a></button>
 				</nav>
 			</div>
 			<div ng-view></div>		

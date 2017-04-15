@@ -1,5 +1,7 @@
 package pl.lodz.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,7 +20,9 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	@RequestMapping(value = "/addCoordinates", method = RequestMethod.PUT)
+	//TODO przenieść do innego kontrolera od MOBILE
+	
+	/*@RequestMapping(value = "/addCoordinates", method = RequestMethod.PUT)
 	public @ResponseBody void addCoordinates(String name, String latitude, String longitude) {
 		User user = userService.getUser(name);
 		Coordinates coords = new Coordinates(Double.valueOf(latitude), Double.valueOf(longitude));
@@ -31,11 +35,11 @@ public class UserController {
 		}
 		
 		userService.saveUser(user);
-	}
+	}*/
 	
-	@RequestMapping("/getDataForUser")
-	public @ResponseBody User getDataForUser(@RequestBody String name) {
-		return userService.getUser(name);
+	@RequestMapping("/getAllUsers")
+	public @ResponseBody List<User> getAllUsers(@RequestBody String login) {
+		return userService.getAllUsers(login);
 	}
 	
 }

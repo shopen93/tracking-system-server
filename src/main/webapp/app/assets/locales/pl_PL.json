@@ -2,6 +2,11 @@
 	"MAIN_PAGE"				:			"Strona g\u0142\u00F3wna",
 	"LOGIN_PAGE"			:			"Logowanie",
 	
+	"MAIN_REGISTER_INFO"	:			"Konto zosta\u0142o utworzone.",
+	"MAIN_WELCOME_INFO"		:			"Witaj w systemie trackingSystem. Zaloguj si\u0119 aby zobaczy\u0107 spis os\u00F3b \u015Bledzonych.",
+	"MAIN_LIST_INFO"		:			"Lista poni\u017Cej przedstawia imiona (nick) wszystkich \u015Bledzony przez Ciebie os\u00F3b.",
+	"MAIN_NO_USERS"			:			"Nie \u015Bledzisz \u017Cadnego u\u017Cytkownika.",
+	
 	"LOGIN_INFO"			:			"Zaloguj si\u0119 do systemu. W przypadku gdy podany adres email nie istnieje w naszym systemie konto zostanie automatycznie za\u0142o\u017Cone.",
 	"LOGIN_EMAIL"			:			"Email",
 	"LOGIN_PASSWORD"		:			"Has\u0142o",

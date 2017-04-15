@@ -22,9 +22,9 @@ public class LoginController {
 	}
 	
 	@RequestMapping("/register")
-	public @ResponseBody String register(@RequestBody Login login) {		
+	public @ResponseBody int register(@RequestBody Login login) {		
 		loginService.register(login.getLogin(), login.getPassword());
-		return "OK";
+		return 0;
 	}
 	
 }
