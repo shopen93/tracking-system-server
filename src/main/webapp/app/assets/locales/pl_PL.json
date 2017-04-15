@@ -10,5 +10,10 @@
 	"LOGIN_INFO"			:			"Zaloguj si\u0119 do systemu. W przypadku gdy podany adres email nie istnieje w naszym systemie konto zostanie automatycznie za\u0142o\u017Cone.",
 	"LOGIN_EMAIL"			:			"Email",
 	"LOGIN_PASSWORD"		:			"Has\u0142o",
-	"LOGIN_BUTTON"			:			"Zaloguj"
+	"LOGIN_BUTTON"			:			"Zaloguj",
+	
+	"DETAILS_USER_INFO"		:			"Dane dla u\u017Cytkownika: ",
+	"DETAILS_LATITUDE"		:			"szeroko\u015B\u0107",
+	"DETAILS_LONGITUDE"		:			"d³ugo\u015B\u0107",
+	"DETAILS_LINK"			:			"link"
 }

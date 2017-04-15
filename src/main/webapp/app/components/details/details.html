@@ -1,0 +1,21 @@
+<div class="row">
+	<blockquote>
+		<p>{{"DETAILS_USER_INFO"|translate}}{{detailsController.userName}}</p>
+	</blockquote>
+</div>
+<div class="row">
+	<table class="table table-condensed">
+		<tr>
+			<td>#</td>
+			<td>{{"DETAILS_LATITUDE"|translate}}</td>
+			<td>{{"DETAILS_LONGITUDE"|translate}}</td>
+			<td>{{"DETAILS_LINK"|translate}}</td>
+		</tr>
+		<tr ng-repeat="coord in detailsController.user.coords">
+			<td>{{$index}}</td>
+			<td>{{coord.latitude}}</td>
+			<td>{{coord.longitude}}</td>
+			<td><button class="btn btn-sm" ng-click="detailsController.showMap($index)">view</button></td>
+		</tr>
+	</table>
+</div>

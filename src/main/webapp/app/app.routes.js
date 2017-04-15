@@ -10,6 +10,10 @@ angular
 				templateUrl: "app/components/login/login.html",
 				controller: "LoginController as loginController"
 			})
+			.when("/details", {
+				templateUrl: "app/components/details/details.html",
+				controller: "DetailsController as detailsController"
+			})
 			.otherwise({
 				redirectTo: "main"
 			});

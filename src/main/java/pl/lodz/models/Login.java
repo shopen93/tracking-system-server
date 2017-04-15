@@ -68,4 +68,8 @@ public class Login {
 		this.users = users;
 	}
 	
+	public void addUser(User user) {
+		this.users.add(user);
+	}
+	
 }

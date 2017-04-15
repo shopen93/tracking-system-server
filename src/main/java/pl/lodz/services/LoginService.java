@@ -31,20 +31,19 @@ public class LoginService {
 	}
 	
 	@Transactional
-	public boolean tryRegister(String login) {
-		Login temp = loginDao.findByLogin(login);
-		if(temp != null) {
-			// we have this login
-			return false;
-		}
-		
-		return true;
-	}
-	
-	@Transactional
 	public void register(String login, String password) {
 		Login newLogin = new Login(login, password);
 		loginDao.save(newLogin);
+	}
+	
+	@Transactional
+	public Login getLogin(String login) {
+		return loginDao.findByLogin(login);
+	}
+	
+	@Transactional
+	public void saveLogin(Login login) {
+		loginDao.save(login);
 	}
 	
 }

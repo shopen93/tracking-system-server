@@ -17,7 +17,7 @@
 		</div>
 		<div class="row" ng-if="mainController.users.length !== 0">
 			<ul ng-repeat="user in mainController.users">
-				<li>user.name</li>
+				<li>{{user.name}} <span class="glyphicon glyphicon-eye-open" ng-click="mainController.goToDetails(user.name)"></span></li>
 			</ul>
 		</div>
 		<div class="row col-sm-offset-1" ng-if="mainController.users.length === 0">

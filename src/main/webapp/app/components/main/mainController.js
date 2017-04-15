@@ -2,22 +2,21 @@ angular
 	.module("tracking system")
 	.controller("MainController", mainController);
 
-function mainController($http, $rootScope){
+function mainController($http, $rootScope, $location){
 	var vm = this;
 	
 	vm.close = function() {
 		$rootScope.showRegisterInfo = false;
 	}
 	
-	$http.post("http://localhost:8080/user/getAllUsers", $rootScope.user)
+	vm.goToDetails = function(userName) {
+		$rootScope.userName = userName;
+		$location.path("/details");
+	}
+	
+	$http.post("http://localhost:8080/user/getAllUsers", $rootScope.login)
 		.success(function(data) {
 			vm.users = data;
 		});
-	
-	/*vm.showMap = function(index) {
-		var coords = vm.coordinates.splice(index, 1).pop();
-		var path = "http://maps.google.com/maps?q="+coords.latitude+","+coords.longitude
-		window.location = path;
-	}*/
 	
 }

@@ -27,7 +27,7 @@ function loginController($http, $rootScope, $location) {
 	}
 	
 	vm.setData = function() {
-		$rootScope.user = vm.login;
+		$rootScope.login = vm.login;
 		$rootScope.logged = true;
 		$location.path("/main");
 	}
