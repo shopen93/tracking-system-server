@@ -8,9 +8,18 @@
 	<body>
 		<div class="container">
 			<div class="row">
-				<nav class="navbar navbar-default">
-					<p class="navbar-text navbar-left"><a href="#main" class="navbar-link">{{"MAIN_PAGE"|translate}}</a></p>
-					<button class="btn btn-default navbar-btn navbar-right" ng-show="!logged"><a href="#login" class="navbar-link">{{"LOGIN_PAGE"|translate}}</a></button>
+				<nav class="navbar navbar-inverse">
+					<div class="navbar-header">
+						<a class="navbar-brand" href="#">TrackingSystem</a>
+					</div>
+					<div class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li class=""><a href="#main">{{"MAIN_PAGE"|translate}}</a></li>
+						</ul>
+						<ul class="nav navbar-nav navbar-right">
+							<li class="" ng-show="!logged"><a href="#login">{{"LOGIN_PAGE"|translate}}</a></li>
+						</ul>
+					</div>
 				</nav>
 			</div>
 			<div ng-view></div>		
@@ -31,6 +40,7 @@
 	<script type="text/javascript" src="app/assets/libs/ui-bootstrap-tpls-0.14.3.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate/2.8.1/angular-translate.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-translate-loader-static-files/2.8.1/angular-translate-loader-static-files.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALzRVb1EE12pg4p2iOw539cVL4xDhFw0o" async defer></script>	
 		
 	<!-- własne JavaScript -->	
 	<script type="text/javascript" src="app/app.module.js"></script>

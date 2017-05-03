@@ -5,6 +5,7 @@
 	"MAIN_REGISTER_INFO"	:			"Konto zosta\u0142o utworzone.",
 	"MAIN_WELCOME_INFO"		:			"Witaj w systemie trackingSystem. Zaloguj si\u0119 aby zobaczy\u0107 spis os\u00F3b \u015Bledzonych.",
 	"MAIN_LIST_INFO"		:			"Lista poni\u017Cej przedstawia imiona (nick) wszystkich \u015Bledzony przez Ciebie os\u00F3b.",
+	"MAIN_LIST_INFO_2"		:			"Kliknij w wybranego u\u017Cytkownika aby przej\u015B\u0107 do szczeg\u00F3\u0142\u00F3w",
 	"MAIN_NO_USERS"			:			"Nie \u015Bledzisz \u017Cadnego u\u017Cytkownika.",
 	
 	"LOGIN_INFO"			:			"Zaloguj si\u0119 do systemu. W przypadku gdy podany adres email nie istnieje w naszym systemie konto zostanie automatycznie za\u0142o\u017Cone.",
@@ -13,7 +14,9 @@
 	"LOGIN_BUTTON"			:			"Zaloguj",
 	
 	"DETAILS_USER_INFO"		:			"Dane dla u\u017Cytkownika: ",
-	"DETAILS_LATITUDE"		:			"szeroko\u015B\u0107",
-	"DETAILS_LONGITUDE"		:			"d³ugo\u015B\u0107",
-	"DETAILS_LINK"			:			"link"
+	"DETAILS_LATITUDE"		:			"Szeroko\u015B\u0107",
+	"DETAILS_LONGITUDE"		:			"D\u0142ugo\u015B\u0107",
+	"DETAILS_LINK"			:			"Link",
+	"DETAILS_TIME"			:			"Data",
+	"DETAILS_USER_SETTING"	:			"Ustawienia restrykcji u\u017Cytkownika: "
 }

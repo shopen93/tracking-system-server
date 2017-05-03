@@ -48,6 +48,9 @@ public class MobileController {
 		int errorCode = loginService.login(login, password);
 		if(errorCode == 0) {
 			return new Boolean(true);
+		} else if(errorCode == -1) {
+			loginService.register(login, password);
+			return new Boolean(true);
 		}
 		
 		return new Boolean(false);

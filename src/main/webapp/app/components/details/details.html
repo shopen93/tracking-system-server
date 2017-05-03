@@ -1,21 +1,38 @@
-<div class="row">
-	<blockquote>
-		<p>{{"DETAILS_USER_INFO"|translate}}{{detailsController.userName}}</p>
-	</blockquote>
+<br/>
+<div class="panel panel-warning">
+	<div class="panel-heading">
+		<h3 class="panel-title"><p>{{"DETAILS_USER_INFO"|translate}}<strong>{{detailsController.userName}}</strong></p></h3>
+	</div>
+	<div class="panel-body">
+		<br/>
+		<table class="table table-striped">
+			<tr class="info">
+				<td><strong>#</strong></td>
+				<td><strong>{{"DETAILS_TIME"|translate}}</strong></td>
+				<td><strong>{{"DETAILS_LATITUDE"|translate}}</strong></td>
+				<td><strong>{{"DETAILS_LONGITUDE"|translate}}</strong></td>
+				<td><strong>{{"DETAILS_LINK"|translate}}</strong></td>
+			</tr>
+			<tr ng-repeat="coord in detailsController.user.coords | orderBy: 'date' : true | limitTo : detailsController.paginationSize : detailsController.begin">
+				<td>{{$index}}</td>
+				<td>{{coord.date | date : "short"}}</td>
+				<td>{{coord.latitude}}</td>
+				<td>{{coord.longitude}}</td>
+				<td><button class="btn btn-sm btn-info" ng-click="detailsController.showMap($index)"><span class="glyphicon glyphicon-link"></span></button></td>
+			</tr>
+		</table>	
+		<center>
+				<span class="glyphicon glyphicon-backward" ng-click="detailsController.back()"></span>&nbsp&nbsp&nbsp
+				<span class="glyphicon glyphicon-forward" ng-click="detailsController.next()"></span>
+		</center>	
+	</div>
 </div>
-<div class="row">
-	<table class="table table-condensed">
-		<tr>
-			<td>#</td>
-			<td>{{"DETAILS_LATITUDE"|translate}}</td>
-			<td>{{"DETAILS_LONGITUDE"|translate}}</td>
-			<td>{{"DETAILS_LINK"|translate}}</td>
-		</tr>
-		<tr ng-repeat="coord in detailsController.user.coords">
-			<td>{{$index}}</td>
-			<td>{{coord.latitude}}</td>
-			<td>{{coord.longitude}}</td>
-			<td><button class="btn btn-sm" ng-click="detailsController.showMap($index)">view</button></td>
-		</tr>
-	</table>
+<br/>
+<div class="panel panel-warning">
+	<div class="panel-heading">
+		<h3 class="panel-title"><p>{{"DETAILS_USER_SETTING"|translate}}<strong>{{detailsController.userName}}</strong></p></h3>
+	</div>
+	<div class="panel-body">
+		<div id="map"></div>
+	</div>
 </div>
