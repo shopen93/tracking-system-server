@@ -14,6 +14,10 @@ angular
 				templateUrl: "app/components/details/details.html",
 				controller: "DetailsController as detailsController"
 			})
+			.when("/map", {
+				templateUrl: "app/components/map/map.html",
+				controller: "MapController as mapController"
+			})
 			.otherwise({
 				redirectTo: "main"
 			});

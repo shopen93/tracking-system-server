@@ -1,7 +1,7 @@
 <br/>
 <div class="panel panel-warning">
 	<div class="panel-heading">
-		<h3 class="panel-title"><p>{{"DETAILS_USER_INFO"|translate}}<strong>{{detailsController.userName}}</strong></p></h3>
+		<h3 class="panel-title"><p>{{"DETAILS_USER_INFO"|translate}}<strong>{{detailsController.user.name}}</strong></p></h3>
 	</div>
 	<div class="panel-body">
 		<br/>
@@ -30,9 +30,14 @@
 <br/>
 <div class="panel panel-warning">
 	<div class="panel-heading">
-		<h3 class="panel-title"><p>{{"DETAILS_USER_SETTING"|translate}}<strong>{{detailsController.userName}}</strong></p></h3>
+		<h3 class="panel-title"><p>{{"DETAILS_USER_SETTING"|translate}}<strong>{{detailsController.user.name}}</strong></p></h3>
 	</div>
 	<div class="panel-body">
-		<div id="map"></div>
+		<div class="col-sm-2">
+			<ul class="list-group" ng-repeat="restriction in detailsController.user.restrictions">
+				<li class="list-group-item">{{restriction.name}}&nbsp<span class="glyphicon glyphicon-trash" ng-click="detailsController.deleteRestriction($index)"></span></li>
+			</ul>
+			<button class="btn btn-warning" ng-click=detailsController.toMap()>{{"DETAILS_NEW_REST"|translate}}</button>
+		</div>
 	</div>
 </div>

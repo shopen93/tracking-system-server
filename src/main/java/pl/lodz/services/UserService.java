@@ -21,10 +21,10 @@ public class UserService {
 	LoginDAO loginDao;
 	
 	@Transactional
-	public User getUser(String name) {
-		return userDao.findByName(name);
+	public User getUser(int id) {
+		return userDao.findById(id);
 	}
-	
+		
 	@Transactional
 	public void saveUser(User user) {
 		userDao.save(user);

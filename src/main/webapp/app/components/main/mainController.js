@@ -2,21 +2,21 @@ angular
 	.module("tracking system")
 	.controller("MainController", mainController);
 
-function mainController($http, $rootScope, $location){
+function mainController($rootScope, $location, systemService){
 	var vm = this;
 	
 	vm.close = function() {
 		$rootScope.showRegisterInfo = false;
 	}
 	
-	vm.goToDetails = function(userName) {
-		$rootScope.userName = userName;
+	vm.goToDetails = function(index) {
+		$rootScope.user = vm.users[index];
 		$location.path("/details");
 	}
 	
-	$http.post("http://localhost:8080/user/getAllUsers", $rootScope.login)
-		.success(function(data) {
+	if($rootScope.login !== undefined) {
+		systemService.getUsersForAccount($rootScope.login).then(function(data) {
 			vm.users = data;
-		});
-	
+		});	
+	}	
 }

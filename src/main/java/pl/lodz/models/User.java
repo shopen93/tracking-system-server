@@ -27,6 +27,9 @@ public class User {
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Coordinates> coords;
 
+	@OneToMany(cascade = CascadeType.ALL)
+	private List<Restriction> restrictions;
+	
 	public User() {
 		this.coords = new ArrayList<Coordinates>();
 	}
@@ -34,6 +37,7 @@ public class User {
 	public User(String name) {
 		this.name = name;
 		this.coords = new ArrayList<Coordinates>();
+		this.restrictions = new ArrayList<Restriction>();
 	}
 	
 	public int getId() {
@@ -60,6 +64,14 @@ public class User {
 		this.coords = coords;
 	}
 	
+	public List<Restriction> getRestrictions() {
+		return restrictions;
+	}
+
+	public void setRestrictions(List<Restriction> restrictions) {
+		this.restrictions = restrictions;
+	}
+
 	/**
 	 * Metoda dodająca parę współrzędnych do listy
 	 * 
@@ -69,4 +81,8 @@ public class User {
 		this.coords.add(coords);
 	}
 	
+	
+	public void addRestriction(Restriction restriction) {
+		this.restrictions.add(restriction);
+	}
 }

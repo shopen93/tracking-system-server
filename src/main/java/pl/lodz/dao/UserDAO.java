@@ -9,6 +9,6 @@ import pl.lodz.models.User;
 @Transactional
 public interface UserDAO extends CrudRepository<User, Integer> {
 
-	public User findByName(String name);
+	public User findById(int id);
 	
 }
