@@ -50,10 +50,10 @@ function systemService($http) {
 		return data;
 	}
 	
-	vm.addUserRestriction = function(restrictionName, firstLocation, secondLocation, userId) {
+	vm.addUserRestriction = function(restrictionName, x, y, userId) {
 		var restrictionDTO = {'name' : restrictionName,
-				'firstCorner' : firstLocation,
-				'secondCorner' : secondLocation};
+				'x' : x,
+				'y' : y};
 		
 		var data = $http.post(URL+"/user/saveRestriction?userId="+userId, restrictionDTO)
 			.then(function() {

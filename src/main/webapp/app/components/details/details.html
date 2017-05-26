@@ -11,6 +11,7 @@
 				<td><strong>{{"DETAILS_TIME"|translate}}</strong></td>
 				<td><strong>{{"DETAILS_LATITUDE"|translate}}</strong></td>
 				<td><strong>{{"DETAILS_LONGITUDE"|translate}}</strong></td>
+				<td><strong>{{"DETAILS_TYPE"|translate}}</strong></td>
 				<td><strong>{{"DETAILS_LINK"|translate}}</strong></td>
 			</tr>
 			<tr ng-repeat="coord in detailsController.user.coords | orderBy: 'date' : true | limitTo : detailsController.paginationSize : detailsController.begin">
@@ -18,6 +19,7 @@
 				<td>{{coord.date | date : "short"}}</td>
 				<td>{{coord.latitude}}</td>
 				<td>{{coord.longitude}}</td>
+				<td><div ng-if="coord.type === 'N'">normalny</div><div ng-if="coord.type === 'E'">warning</div></td>
 				<td><button class="btn btn-sm btn-info" ng-click="detailsController.showMap($index)"><span class="glyphicon glyphicon-link"></span></button></td>
 			</tr>
 		</table>	

@@ -25,14 +25,12 @@ function mapController($rootScope, $location, systemService){
 	}
 
 	function placeMarker(location) {
-		if(markersArray.length < 2) {
-			var marker = new google.maps.Marker({
-				position: location, 
-			    map: map
-			});
-			
-			markersArray.push(marker);
-		}	
+		var marker = new google.maps.Marker({
+			position: location, 
+		    map: map
+		});
+		
+		markersArray.push(marker);	
 	}
 	
 	function deleteMarkers() {
@@ -44,13 +42,20 @@ function mapController($rootScope, $location, systemService){
 	}
 	
 	vm.addPlace = function() {
-		if(markersArray.length !== 2 || vm.name === undefined) {
+		if(markersArray.length < 2 || vm.name === undefined) {
 			vm.makersError = true;
 			return;
 		}
 		
-		systemService.addUserRestriction(vm.name, markersArray[0].getPosition().lat() + ";" + markersArray[0].getPosition().lng()
-				,secondMarker = markersArray[1].getPosition().lat() + ";" + markersArray[1].getPosition().lng(), $rootScope.user.id);
+		var x = markersArray[0].getPosition().lng();
+		var y = markersArray[0].getPosition().lat();
+		
+		for(var i = 1; i < markersArray.length; i++) {
+			x = x + ';' + markersArray[i].getPosition().lng();
+			y = y + ';' + markersArray[i].getPosition().lat();
+		}
+		
+		systemService.addUserRestriction(vm.name, x, y, $rootScope.user.id);
 		$location.path("/details");
 	}
 	

@@ -28,10 +28,10 @@ public class MobileController {
 	public @ResponseBody void addCoordinates(String login, String name, String latitude, String longitude) {
 		Login loginData = loginService.getLogin(login);
 		List<User> users = loginData.getUsers();
-		Coordinates coords = new Coordinates(Double.valueOf(latitude), Double.valueOf(longitude));
+		Coordinates coords = new Coordinates(Double.valueOf(latitude), Double.valueOf(longitude), Coordinates.NORMAL_TYPE);
 		for(User user : users) {
-			if(name.equals(user.getName())) {
-				user.addCoords(coords);
+			if(name.equals(user.getName())) {			
+				user.addCoordsWithCheck(coords);
 				userService.saveUser(user);
 				return;
 			}

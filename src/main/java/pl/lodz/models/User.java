@@ -6,6 +6,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import pl.lodz.Polygon2D;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -84,5 +86,27 @@ public class User {
 	
 	public void addRestriction(Restriction restriction) {
 		this.restrictions.add(restriction);
+	}
+	
+	public void addCoordsWithCheck(Coordinates coords) {
+		boolean inPolygon = false;
+		
+		for(Restriction restriction : this.restrictions) {
+			double x[] = new double[restriction.getPoints().size()];
+			double y[] = new double[restriction.getPoints().size()];
+			for(int i = 0; i < restriction.getPoints().size(); i++) {
+				x[i] = restriction.getPoints().get(i).getX();
+				y[i] = restriction.getPoints().get(i).getY();
+			}
+			
+			Polygon2D polygon = new Polygon2D(x, y, x.length);
+			inPolygon = inPolygon || polygon.contains(coords.getLongitude(), coords.getLatitude());
+		}
+		
+		if(!inPolygon && this.restrictions.size() != 0) {
+			coords.setType(Coordinates.ERROR_TYPE);
+		}
+		
+		this.addCoords(coords);
 	}
 }

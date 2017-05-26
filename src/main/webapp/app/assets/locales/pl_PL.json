@@ -16,13 +16,14 @@
 	"DETAILS_USER_INFO"		:			"Dane dla u\u017Cytkownika: ",
 	"DETAILS_LATITUDE"		:			"Szeroko\u015B\u0107",
 	"DETAILS_LONGITUDE"		:			"D\u0142ugo\u015B\u0107",
+	"DETAILS_TYPE"			:			"Rodzaj zg\u0142oszenia",
 	"DETAILS_LINK"			:			"Link",
 	"DETAILS_TIME"			:			"Data",
 	"DETAILS_USER_SETTING"	:			"Ustawienia restrykcji u\u017Cytkownika: ",
 	"DETAILS_NEW_REST"		:			"Dodaj now\u0105",
 	
 	"MAP_INFO"				:			"Ustawienia strefy bezpiecznej",
-	"MAP_INSTRUCTION"		:			"W celu wyznaczenia strefy bezpiecznej nale\u017Cy wprowadzi\u0107 nazw\u0119 obszaru oraz zaznaczy\u0107 przy pomocy markera (lewy klik myszy) 2 wierzcho\u0142ki prostok\u0105ta. Strefa bezpieczna to obszar mieszcz\u0105cy si\u0119 w granicach utworzonego przez markery prostok\u0105ta. Prawym przyciskiem myszy resetujemy zaznaczenia.",
+	"MAP_INSTRUCTION"		:			"W celu wyznaczenia strefy bezpiecznej nale\u017Cy wprowadzi\u0107 nazw\u0119 obszaru oraz zaznaczy\u0107 przy pomocy markera (lewy klik myszy) conajmniej 2 wierzcho\u0142ki. Strefa bezpieczna to obszar mieszcz\u0105cy si\u0119 w granicach utworzonego przez markery wielok\u0105ta. Prawym przyciskiem myszy resetujemy zaznaczenia.",
 	"MAP_NAME"				:			"Nazwa",
 	"MAP_BUTTON"			:			"Dodaj",
 	"MAP_MARKES_ERROR"		:			"Nie zgadza si\u0119 ilo\u015B\u0107 zaznaczonych marker\u00F3w lub nie poda\u0142e\u015B nazwy"

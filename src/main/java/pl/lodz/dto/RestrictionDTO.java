@@ -4,9 +4,9 @@ public class RestrictionDTO {
 	
 	private String name;
 	
-	private String firstCorner;
+	private String x;
 	
-	private String secondCorner;
+	private String y;
 
 	public String getName() {
 		return name;
@@ -16,20 +16,20 @@ public class RestrictionDTO {
 		this.name = name;
 	}
 
-	public String getFirstCorner() {
-		return firstCorner;
+	public String getX() {
+		return x;
 	}
 
-	public void setFirstCorner(String firstCorner) {
-		this.firstCorner = firstCorner;
+	public void setX(String x) {
+		this.x = x;
 	}
 
-	public String getSecondCorner() {
-		return secondCorner;
+	public String getY() {
+		return y;
 	}
 
-	public void setSecondCorner(String secondCorner) {
-		this.secondCorner = secondCorner;
+	public void setY(String y) {
+		this.y = y;
 	}
 	
 }

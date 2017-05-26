@@ -10,6 +10,10 @@ import javax.persistence.Id;
 @Entity
 public class Coordinates {
 
+	public final static String ERROR_TYPE = "E";
+	
+	public final static String NORMAL_TYPE = "N";
+	
 	@Id
 	@GeneratedValue
 	private int id;
@@ -23,14 +27,22 @@ public class Coordinates {
 	@Column(name = "creationDate")
 	private Date date;
 	
+	@Column(name = "type")
+	private String type;
+	
+	@Column(name = "show")
+	private boolean show;
+	
 	public Coordinates() {
 		
 	}
 	
-	public Coordinates(double latitude, double longitude) {
+	public Coordinates(double latitude, double longitude, String type) {
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.date = new Date();
+		this.type = type;
+		this.show = true;
 	}
 	
 	public int getId() {
@@ -64,5 +76,20 @@ public class Coordinates {
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 	
+	public boolean isShow() {
+		return show;
+	}
+
+	public void setShow(boolean show) {
+		this.show = show;
+	}
 }

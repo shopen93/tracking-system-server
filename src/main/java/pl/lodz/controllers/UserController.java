@@ -1,5 +1,6 @@
 package pl.lodz.controllers;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import pl.lodz.dto.RestrictionDTO;
+import pl.lodz.models.Point;
 import pl.lodz.models.Restriction;
 import pl.lodz.models.User;
 import pl.lodz.services.UserService;
@@ -35,7 +37,16 @@ public class UserController {
 	public @ResponseBody void saveRestriction(@RequestParam("userId") int userId, @RequestBody RestrictionDTO data) {
 		User user = userService.getUser(userId);
 		
-		Restriction restriction = new Restriction(data.getName(), data.getFirstCorner(), data.getSecondCorner());
+		List<Point> points = new ArrayList<Point>();
+		String[] x = data.getX().split(";");
+		String[] y = data.getY().split(";");
+		
+		for(int i = 0; i < x.length; i++) {
+			Point point = new Point(Double.parseDouble(x[i]), Double.parseDouble(y[i]));
+			points.add(point);
+		}
+		
+		Restriction restriction = new Restriction(data.getName(), points);
 		user.addRestriction(restriction);
 		
 		userService.saveUser(user);
