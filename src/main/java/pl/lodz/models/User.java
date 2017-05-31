@@ -109,4 +109,15 @@ public class User {
 		
 		this.addCoords(coords);
 	}
+	
+	public boolean anyNewMessages() {
+		for(Coordinates coord : this.coords) {
+			if(Coordinates.ERROR_TYPE.equals(coord.getType()) && coord.isShow()) {
+				coord.setShow(false);
+				return true;
+			}
+		}
+		
+		return false;
+	}
 }

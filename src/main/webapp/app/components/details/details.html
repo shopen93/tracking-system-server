@@ -19,7 +19,10 @@
 				<td>{{coord.date | date : "short"}}</td>
 				<td>{{coord.latitude}}</td>
 				<td>{{coord.longitude}}</td>
-				<td><div ng-if="coord.type === 'N'">normalny</div><div ng-if="coord.type === 'E'">warning</div></td>
+				<td>
+					<div ng-if="coord.type === 'N'">{{"DETAILS_NORMAL_TYPE"|translate}}</div>
+					<div ng-if="coord.type === 'E'"><span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp{{"DETAILS_ERROR_TYPE"|translate}}</div>
+				</td>
 				<td><button class="btn btn-sm btn-info" ng-click="detailsController.showMap($index)"><span class="glyphicon glyphicon-link"></span></button></td>
 			</tr>
 		</table>	

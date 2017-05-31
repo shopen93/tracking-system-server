@@ -56,4 +56,18 @@ public class MobileController {
 		return new Boolean(false);
 	}
 	
+	@RequestMapping(value = "/checkMessages", method = RequestMethod.POST)
+	public @ResponseBody String checkMessages(String login) {
+		String message = "";
+		
+		Login loginData = loginService.getLogin(login);
+		for(User user : loginData.getUsers()) {
+			if(user.anyNewMessages()) {
+				message += "Użytkownik " + user.getName() + " opuścił dozwoloną strefe\n";
+			}
+		}
+		
+		loginService.saveLogin(loginData);
+		return message;
+	}
 }
